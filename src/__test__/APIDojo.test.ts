@@ -1,4 +1,4 @@
-import APIDojo_IMDb from "../classes/APIDojo_IMDb";
+import {APIDojo_IMDb} from "../classes/APIDojo_IMDb";
 
 const api = new APIDojo_IMDb(process.env.API_DOJO_API_KEY);
 

@@ -26,7 +26,7 @@ enum CURRENT_COUNTRY {
 }
 
 
-export default class APIDojo_IMDb extends RapidAPI {
+export class APIDojo_IMDb extends RapidAPI {
 
     constructor(apiKey: string | undefined){
         super(apiKey, BASE_URL);

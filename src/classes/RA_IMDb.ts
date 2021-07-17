@@ -7,7 +7,7 @@ enum ENDPOINTS {
     base = '/'
 }
 
-export default class RA_IMDb extends RapidAPI {
+export class RA_IMDb extends RapidAPI {
 
     constructor(apiKey: string | undefined){
         super(apiKey, BASE_URL);
