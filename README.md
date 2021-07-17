@@ -19,9 +19,12 @@ import {RA_IMDb} from 'rapid-api-imdb-wrappers';
 
 const api = new RA_IMDb(process.env.RA_API_KEY);
 
-const data = await api.search({s: 'Avengers Endgame'});
+(async function(){
+    const data = await api.search({s: 'Avengers Endgame'});
 
-console.log(data);
+    console.log(data);
+})();
+
 
 ```
 
@@ -32,9 +35,11 @@ import {APIDojo_IMDb} from 'rapid-api-imdb-wrappers';
 
 const api = new APIDojo_IMDb(process.env.API_DOJO_API_KEY);
 
+(async function(){
 const data = await api.getOverview({tconst: 'tt0944947'});
 
 console.log(data);
+})();
 
 ```
 

@@ -1,5 +1,5 @@
 {
-  "name": "rapid-api-imdb",
+  "name": "rapid-api-imdb-wrappers",
   "version": "0.0.1",
   "description": "Helper package wrapping a couple of Rapid API's IMDB API services",
   "main": "./build/index.js",
@@ -35,5 +35,9 @@
   },
   "dependencies": {
     "axios": "^0.21.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cinestruct/rapid-api-imdb-wrappers.git"
   }
 }
