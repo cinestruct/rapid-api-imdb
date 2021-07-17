@@ -1,5 +1,5 @@
 {
-  "name": "rapid-api-imdb-wrappers",
+  "name": "rapid-api-imdb",
   "version": "0.0.2",
   "description": "Helper package wrapping a couple of Rapid API's IMDB API services",
   "main": "./build/index.js",
@@ -38,6 +38,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cinestruct/rapid-api-imdb-wrappers.git"
+    "url": "https://github.com/cinestruct/rapid-api-imdb.git"
   }
 }

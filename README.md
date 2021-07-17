@@ -1,4 +1,4 @@
-# Rapid API IMDB API Wrappers
+# RapidAPI IMDB API Wrappers
 
 This package is a wrapper around IMDB APIs on [RapidAPI](https://rapidapi.com)
 
@@ -9,13 +9,13 @@ Uses axios as a dependency to make the api requests
 Install
 
 ```bash
-$ npm install rapid-api-imdb-wrappers
+$ npm install rapid-api-imdb
 ```
 
 ### RapidAPI IMDB API
 
 ```ts
-import {RA_IMDb} from 'rapid-api-imdb-wrappers';
+import {RA_IMDb} from 'rapid-api-imdb';
 
 const api = new RA_IMDb(process.env.RA_API_KEY);
 
@@ -31,7 +31,7 @@ const api = new RA_IMDb(process.env.RA_API_KEY);
 ### API Dojo IMDB API
 
 ```ts
-import {APIDojo_IMDb} from 'rapid-api-imdb-wrappers';
+import {APIDojo_IMDb} from 'rapid-api-imdb';
 
 const api = new APIDojo_IMDb(process.env.API_DOJO_API_KEY);
 
