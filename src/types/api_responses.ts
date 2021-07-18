@@ -59,7 +59,15 @@ export interface APIDojo_OverviewResponse {
         titleType: 'tvSeries' | 'movie';
         year: number;
     };
-    certificates: object;
+    certificates?: {
+        'US': {
+            certificate: string;
+            country: string;
+            certificateNumber: number;
+            ratingReason: string;
+            ratingsBody: string;
+        }[] | any;
+    };
     ratings: {
         canRate: boolean;
         rating: number;
