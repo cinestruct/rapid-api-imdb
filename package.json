@@ -1,6 +1,6 @@
 {
   "name": "rapid-api-imdb",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Helper package wrapping a couple of Rapid API's IMDB API services",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
