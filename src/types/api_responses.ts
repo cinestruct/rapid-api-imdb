@@ -75,7 +75,7 @@ export interface APIDojo_OverviewResponse {
         topRank?: 78;
         otherRanks?: object[];
     }
-    genres: Enumerator;
+    genres: string[];
     releaseDate: string;
     plotOutline: {
         author?: string;
