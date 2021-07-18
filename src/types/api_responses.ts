@@ -26,11 +26,15 @@ interface Image {
 }
 
 export interface RA_SearchResponse {
-    Title: string;
-    Year: string;
-    imdbID: string;
-    Type: string;
-    Poster: string
+    Search: {
+        Title: string;
+        Year: string;
+        imdbID: string;
+        Type: string;
+        Poster: string
+    }[];
+    totalResults: 9;
+    Response: string
 }
 
 enum ContentType {

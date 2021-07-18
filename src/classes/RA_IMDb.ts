@@ -13,7 +13,7 @@ export class RA_IMDb extends RapidAPI {
         super(apiKey, BASE_URL);
     }
 
-    async search(params: {s: string, page?: string, r?: string}): Promise<RA_SearchResponse[] | null> {
+    async search(params: {s: string, page?: string, r?: string}): Promise<RA_SearchResponse | null> {
         try {
             const res = await this._api?.get(ENDPOINTS.base,
             {
@@ -24,7 +24,7 @@ export class RA_IMDb extends RapidAPI {
                 return null;
             }
 
-            const data = res.data as RA_SearchResponse[];
+            const data = res.data as RA_SearchResponse;
             return data;
             
         }catch(e){
