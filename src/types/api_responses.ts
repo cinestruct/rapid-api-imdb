@@ -37,6 +37,37 @@ export interface RA_SearchResponse {
     Response: string
 }
 
+export interface RA_OverViewResponse {
+    Title: string;
+    Year: string;
+    Rated: string;
+    Released: string;
+    Runtime: string;
+    Genre: string;
+    Director: string;
+    Writer: string;
+    Actors: string;
+    Plot: string;
+    Language: string;
+    Country: string;
+    Awards: string;
+    Poster: string;
+    Ratings: {
+        Source: string;
+        Value: string;
+    }[];
+    Metascore: string;
+    imdbRating: string;
+    imdbVotes: string;
+    imdbID: string;
+    Type: string;
+    DVD: string;
+    BoxOffice: string;
+    Production: string;
+    Website: string;
+    Response: string;
+}
+
 enum ContentType {
     Trailer = 'Trailer', 
     TV_Program= 'TV Program',
@@ -46,6 +77,8 @@ enum ContentType {
     Featurette = 'Featurette',
     Other = 'Other'
 }
+
+
 
 
 export interface APIDojo_OverviewResponse {

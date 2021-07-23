@@ -1,5 +1,5 @@
 import RapidAPI from "./RapidAPI";
-import { RA_SearchResponse } from "../types/api_responses";
+import { RA_OverViewResponse, RA_SearchResponse } from "../types/api_responses";
 
 const BASE_URL = 'https://movie-database-imdb-alternative.p.rapidapi.com';
 
@@ -32,5 +32,25 @@ export class RA_IMDb extends RapidAPI {
 
             return null;
         }  
+    }
+
+    async getOverview(params: {i: string, type?: string, callback?: string, r?:string, v?: string, plot?: string}): Promise<RA_OverViewResponse | null> {
+        try {
+            const res = await this._api?.get(ENDPOINTS.base,
+                {
+                    params
+                });
+    
+                if(!res){
+                    return null;
+                }
+    
+                const data = res.data as RA_OverViewResponse;
+                return data;
+        }catch(e){
+            console.error('Error requesting data', e);
+
+            return null;
+        }
     }
 }

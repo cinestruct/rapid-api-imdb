@@ -9,4 +9,10 @@ it('return search results', async ()=> {
     expect(data).toBeTruthy();
 });
 
+it('return a movie', async ()=> {
+
+    const data = await api.getOverview({i: 'tt4154796'});
+    
+    expect(data).toBeTruthy();
+});
 
