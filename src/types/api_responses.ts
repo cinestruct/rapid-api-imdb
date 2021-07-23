@@ -33,7 +33,7 @@ export interface RA_SearchResponse {
         Type: string;
         Poster: string
     }[];
-    totalResults: 9;
+    totalResults: string;
     Response: string
 }
 
