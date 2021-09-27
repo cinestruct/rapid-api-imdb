@@ -114,7 +114,7 @@ export interface APIDojo_OverviewResponse {
     }
     genres: string[];
     releaseDate: string;
-    plotOutline: {
+    plotOutline?: {
         author?: string;
         id: string;
         text: string;
