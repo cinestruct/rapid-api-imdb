@@ -78,7 +78,29 @@ enum ContentType {
     Other = 'Other'
 }
 
+export interface Amerlrafie_CurrentBoxOfficeResponse {
+    Total_results: string;
+    results: number;
+    status: string;
+    status_message: string;
+    movie_results: {
+        title: string;
+        year: string;
+        imdb_id: string;
+    }[]
+}
 
+export interface Amerlrafie_PopularTVShowsResponse {
+    Total_results: string;
+    results: number;
+    status: string;
+    status_message: string;
+    tv_results: {
+        title: string;
+        year: string;
+        imdb_id: string;
+    }[]
+}
 
 
 export interface APIDojo_OverviewResponse {
