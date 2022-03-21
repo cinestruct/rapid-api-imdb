@@ -8,7 +8,9 @@ enum ENDPOINTS {
     overview = '/title/get-overview-details',
     images = '/title/get-images',
     videos = '/title/get-videos',
-    video_playback = '/title/get-video-playback'
+    video_playback = '/title/get-video-playback',
+    popular_movies = '/title/get-most-popular-movies',
+    popular_shows = '/title/get-most-popular-tv-shows'
 }
 enum CURRENT_COUNTRY {
     US = 'US',
@@ -49,6 +51,52 @@ export class APIDojo_IMDb extends RapidAPI {
             console.error('Error requesting data', e);
             return null;
         }  
+    }
+
+    async getPopularMovies(params: {homeCountry?: CURRENT_COUNTRY, currentCountry?: CURRENT_COUNTRY, purchaseCountry?: CURRENT_COUNTRY}): Promise <string[] | null>{
+        try {
+            const res = await this._api?.get(ENDPOINTS.popular_movies,
+            {
+                params
+            });
+        
+
+            if(!res){
+                return null;
+            }
+
+            const data = res.data as string[];
+
+            return data.map((title)=>title.split('title/')[1].split('/')[0]);
+            
+            
+        } catch (e){
+            console.error('Error requesting popular movie data', e);
+            return null;
+        }
+    }
+
+    async getPopularShows(params: {homeCountry?: CURRENT_COUNTRY, currentCountry?: CURRENT_COUNTRY, purchaseCountry?: CURRENT_COUNTRY}): Promise <string[] | null>{
+        try {
+            const res = await this._api?.get(ENDPOINTS.popular_shows,
+            {
+                params
+            });
+        
+
+            if(!res){
+                return null;
+            }
+
+            const data = res.data as string[];
+
+            return data.map((title)=>title.split('title/')[1].split('/')[0]);
+            
+            
+        } catch (e){
+            console.error('Error requesting popular movie data', e);
+            return null;
+        }
     }
 
     async getImages(params: {tconst: string, limit?: number}): Promise<APIDojo_ImagesResponse | null>{

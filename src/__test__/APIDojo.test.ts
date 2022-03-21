@@ -30,3 +30,16 @@ it('return videos', async ()=> {
     expect(data).toBeTruthy();
 });
 
+it('return popular movies', async ()=> {
+
+    const data = await api.getPopularMovies({});
+
+    expect(data![0]).toBeTruthy();
+});
+
+it('return popular shows', async ()=> {
+
+    const data = await api.getPopularShows({});
+
+    expect(data![0]).toBeTruthy();
+});

@@ -1,5 +1,5 @@
-import RapidAPI from "./RapidAPI";
-import { Amerlrafie_CurrentBoxOfficeResponse, Amerlrafie_PopularTVShowsResponse } from "../types/api_responses";
+import RapidAPI from "../RapidAPI";
+import { Amerlrafie_CurrentBoxOfficeResponse, Amerlrafie_PopularTVShowsResponse } from "../../types/api_responses";
 
 const BASE_URL = 'https://movies-tvshows-data-imdb.p.rapidapi.com';
 
@@ -49,7 +49,6 @@ export class Amrelrafie_IMDb extends RapidAPI {
             if(!res){
                 return null;
             }
-
             const data = res.data as Amerlrafie_PopularTVShowsResponse;
             return data;
         }catch(e){
