@@ -12,7 +12,7 @@ enum ENDPOINTS {
     popular_movies = '/title/get-most-popular-movies',
     popular_shows = '/title/get-most-popular-tv-shows'
 }
-enum CURRENT_COUNTRY {
+export enum CURRENT_COUNTRY {
     US = 'US',
     AR = 'AR',
     AU = 'AU',
