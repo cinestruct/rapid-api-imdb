@@ -1,7 +1,7 @@
 import RapidAPI from "./RapidAPI";
 import { RA_OverViewResponse, RA_SearchResponse } from "../types/api_responses";
 
-const BASE_URL = 'https://movie-database-imdb-alternative.p.rapidapi.com';
+const BASE_URL = 'https://movie-database-alternative.p.rapidapi.com';
 
 enum ENDPOINTS {
     base = '/'
