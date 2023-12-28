@@ -1,5 +1,6 @@
 import RapidAPI from "./RapidAPI";
-import { APIDojo_ImagesResponse, APIDojo_OverviewResponse, APIDojo_VideoPlaybackResponse, APIDojo_VideosResponse } from "../types/api_responses";
+import { APIDojo_FindTitleV2Response, APIDojo_ImagesResponse, APIDojo_OverviewResponse, APIDojo_VideoPlaybackResponse, APIDojo_VideosResponse } from "../types/api_responses";
+import { APIDojo_FindTitleV2Attributes } from "../types/api_requests";
 
 const BASE_URL = 'https://imdb8.p.rapidapi.com';
 
@@ -10,7 +11,8 @@ enum ENDPOINTS {
     videos = '/title/get-videos',
     video_playback = '/title/get-video-playback',
     popular_movies = '/title/get-most-popular-movies',
-    popular_shows = '/title/get-most-popular-tv-shows'
+    popular_shows = '/title/get-most-popular-tv-shows',
+    find_title_v2 = 'title/v2/find',
 }
 export enum CURRENT_COUNTRY {
     US = 'US',
@@ -33,6 +35,67 @@ export class APIDojo_IMDb extends RapidAPI {
     constructor(apiKey: string | undefined){
         super(apiKey, BASE_URL);
     }
+
+    async findTitle(params: APIDojo_FindTitleV2Attributes): Promise <APIDojo_FindTitleV2Response | null>{
+        
+        if(params.titleType && Array.isArray(params.titleType)){
+            //@ts-ignore
+            params.titleType = params.titleType.join(',');
+        }
+
+        if(params.genre && Array.isArray(params.genre)){
+            //@ts-ignore
+            params.genre = params.genre.join(',');
+        }
+
+        if(params.watchOption && Array.isArray(params.watchOption)){
+            //@ts-ignore
+            params.watchOption = params.watchOption.join(',');
+        }
+
+        if(params.keyword && Array.isArray(params.keyword)){
+            //@ts-ignore
+            params.keyword = params.keyword.join(',');
+        }
+
+        if(params.group && Array.isArray(params.group)){
+            //@ts-ignore
+            params.group = params.group.join(',');
+        }
+
+        if(params.primaryLanguage && Array.isArray(params.primaryLanguage)){
+            //@ts-ignore
+            params.primaryLanguage = params.primaryLanguage.join(',');
+        }
+
+        if(params.primaryCountry && Array.isArray(params.primaryCountry)){
+            //@ts-ignore
+            params.primaryCountry = params.primaryCountry.join(',');
+        }
+
+        try {
+           
+            const res = await this._api?.get(ENDPOINTS.find_title_v2,
+            {
+                params
+            });
+
+            if(!res){
+                return null;
+            }
+            
+            const data = res.data as APIDojo_FindTitleV2Response;
+            return data;
+            
+        } catch (e){
+            console.error('Error requesting data', e);
+            return null;
+        }
+    }
+
+
+
+    
 
     async getOverview(params: {tconst: string, currentCountry?: CURRENT_COUNTRY}): Promise <APIDojo_OverviewResponse | null>{
         try {

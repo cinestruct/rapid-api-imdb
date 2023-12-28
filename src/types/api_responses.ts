@@ -224,3 +224,62 @@ export interface APIDojo_VideoPlaybackResponse {
 }
 
 
+export interface APIDojo_FindTitleV2Response {
+    
+    "@meta": Meta;
+    "@type": string;
+    "query": string;
+    "results": Result[];
+    "types"?: string[];
+    "totalMatches": number;
+  }
+  
+  interface Meta {
+    "operation": string;
+    "requestId": string;
+    "serviceTimeMs": number;
+  }
+  
+  interface Result {
+    "id": string;
+    "image"?: Image;
+    "runningTimeInMinutes"?: number;
+    "nextEpisode"?: string;
+    "numberOfEpisodes"?: number;
+    "seriesEndYear"?: number;
+    "seriesStartYear"?: number;
+    "title": string;
+    "titleType": string;
+    "year": number;
+    "principals"?: Principal[];
+  }
+  
+  interface Image {
+    "height": number;
+    "id": string;
+    "url": string;
+    "width": number;
+  }
+  
+  interface Principal {
+    "id": string;
+    "legacyNameText": string;
+    "name": string;
+    "category": string;
+    "characters": string[];
+    "endYear"?: number;
+    "episodeCount"?: number;
+    "roles": Role[];
+    "startYear"?: number;
+    "billing"?: number;
+    "attr"?: string[];
+    "disambiguation"?: string;
+    "as"?: string;
+  }
+  
+  interface Role {
+    "character"?: string;
+    "characterId"?: string;
+  }
+  
+

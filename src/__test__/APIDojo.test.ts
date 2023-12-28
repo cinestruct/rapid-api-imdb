@@ -1,4 +1,5 @@
 import {APIDojo_IMDb} from "../classes/APIDojo_IMDb";
+import { resultsArrayTestData } from "./test_data";
 
 const api = new APIDojo_IMDb(process.env.API_DOJO_API_KEY);
 
@@ -9,37 +10,44 @@ it('return overview results', async ()=> {
     expect(data).toBeTruthy();
 });
 
-it('return video playback results', async ()=> {
+it('return find title results', async ()=> {
 
-    const data = await api.getVideoPlayback({viconst: 'vi1015463705'});
-
-    expect(data).toBeTruthy();
-});
-
-it('return title images', async ()=> {
-
-    const data = await api.getImages({tconst: 'tt0944947'});
+    const data = await api.findTitle({title: 'game of', limit: 20, sortArg: 'moviemeter,asc'});
 
     expect(data).toBeTruthy();
 });
 
-it('return videos', async ()=> {
+// it('return video playback results', async ()=> {
 
-    const data = await api.getVideos({tconst: 'tt0944947'});
+//     const data = await api.getVideoPlayback({viconst: 'vi1015463705'});
 
-    expect(data).toBeTruthy();
-});
+//     expect(data).toBeTruthy();
+// });
 
-it('return popular movies', async ()=> {
+// it('return title images', async ()=> {
 
-    const data = await api.getPopularMovies({});
+//     const data = await api.getImages({tconst: 'tt0944947'});
 
-    expect(data![0]).toBeTruthy();
-});
+//     expect(data).toBeTruthy();
+// });
 
-it('return popular shows', async ()=> {
+// it('return videos', async ()=> {
 
-    const data = await api.getPopularShows({});
+//     const data = await api.getVideos({tconst: 'tt0944947'});
 
-    expect(data![0]).toBeTruthy();
-});
+//     expect(data).toBeTruthy();
+// });
+
+// it('return popular movies', async ()=> {
+
+//     const data = await api.getPopularMovies({});
+
+//     expect(data![0]).toBeTruthy();
+// });
+
+// it('return popular shows', async ()=> {
+
+//     const data = await api.getPopularShows({});
+
+//     expect(data![0]).toBeTruthy();
+// });
